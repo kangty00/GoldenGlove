@@ -9,7 +9,7 @@ export default function PinLockPage() {
   const [pin, setPin] = useState('');
   const [error, setError] = useState(false);
   const router = useRouter();
-  const CORRECT_PIN = process.env.NEXT_PUBLIC_6DIGIT_PIN || '000000';
+  const CORRECT_PIN = process.env.NEXT_PUBLIC_6DIGIT_PIN || '369874';
 
   const handleInput = (num: string) => {
     if (pin.length < 6) {
