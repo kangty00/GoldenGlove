@@ -1,0 +1,17 @@
+{
+  "name": "GoldenGlove",
+  "short_name": "GoldenGlove",
+  "description": "KWJ Elite Player Management System",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "background_color": "#001A3D",
+  "theme_color": "#001A3D",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
