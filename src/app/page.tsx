@@ -27,6 +27,12 @@ export default function PinLockPage() {
       if (pin === CORRECT_PIN) {
         // 인증 성공 시 세션 저장 (Client-side)
         sessionStorage.setItem('locked_verified', 'true');
+        
+        // 서버사이드 미들웨어 보안을 위한 쿠키 발급 (24시간 유지)
+        const expiryDate = new Date();
+        expiryDate.setTime(expiryDate.getTime() + (24 * 60 * 60 * 1000));
+        document.cookie = `goldenglove_auth=true; expires=${expiryDate.toUTCString()}; path=/;`;
+        
         router.push('/dashboard');
       } else {
         setError(true);
