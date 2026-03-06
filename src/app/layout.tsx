@@ -8,9 +8,9 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "GoldenGlove | Elite Baseball Player Tracking",
-  description: "MLB를 향한 전인적 야구 성장 트래킹 모델",
-  manifest: "/manifest.json",
+  title: "GoldenGlove",
+  description: "Elite Baseball Player Tracking",
+  manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
