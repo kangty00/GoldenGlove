@@ -11,6 +11,15 @@ export const metadata: Metadata = {
   title: "GoldenGlove | Elite Baseball Player Tracking",
   description: "MLB를 향한 전인적 야구 성장 트래킹 모델",
   manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "GoldenGlove",
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  themeColor: "#001A3D",
   viewport: {
     width: "device-width",
     initialScale: 1,
