@@ -49,26 +49,29 @@ export default function DashboardLayout({
     <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans overflow-x-hidden antialiased">
       {/* Fixed Sticky Header */}
       <header className="fixed top-0 left-0 right-0 z-[100] bg-white border-b border-slate-100 shadow-sm">
-        <div className="max-w-md mx-auto px-6 h-18 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#001A3D] flex items-center justify-center shadow-lg shadow-black/10">
-              <CircleDot className="w-6 h-6 text-white" />
+        <div className="max-w-md mx-auto px-6 h-14 py-2 flex items-center justify-between">
+          <div 
+            onClick={() => router.push('/dashboard')}
+            className="flex items-center gap-3 cursor-pointer active:scale-95 transition-all"
+          >
+            <div className="w-8 h-8 rounded-lg bg-[#001A3D] flex items-center justify-center shadow-lg shadow-black/10">
+              <CircleDot className="w-5 h-5 text-white" />
             </div>
             <div className="flex flex-col">
-              <span className="font-extrabold text-sm tracking-tighter text-[#001A3D] uppercase italic">
+              <span className="font-extrabold text-xs tracking-tighter text-[#001A3D] uppercase italic leading-none">
                 GoldenGlove
               </span>
-              <span className="text-[8px] font-black text-rose-500 tracking-[0.2em] uppercase leading-none mt-0.5">KWJ PERFORMANCE</span>
+              <span className="text-[7px] font-black text-rose-500 tracking-[0.2em] uppercase leading-none mt-1">KWJ PERFORMANCE</span>
             </div>
           </div>
           
           <div className="relative">
             <button 
               onClick={() => setMenuOpen(!menuOpen)}
-              className="w-11 h-11 rounded-2xl bg-slate-50 flex items-center justify-center text-[#001A3D] border border-slate-100 active:scale-95 transition-all shadow-sm"
+              className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-[#001A3D] border border-slate-100 active:scale-95 transition-all shadow-sm"
               aria-label="Menu"
             >
-              <Menu className="w-6 h-6 stroke-[2.5px]" />
+              <Menu className="w-5 h-5 stroke-[2.5px]" />
             </button>
             
             <AnimatePresence>
@@ -135,7 +138,7 @@ export default function DashboardLayout({
       </header>
 
       {/* Main Content Area */}
-      <main className="flex-1 pt-18 pb-2 relative bg-slate-50">
+      <main className="flex-1 pt-14 pb-2 relative bg-slate-50">
         <div className="relative z-10 w-full max-w-md mx-auto">
             {children}
             
@@ -159,8 +162,8 @@ export default function DashboardLayout({
       </main>
 
       {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-100 px-6 pb-2 shadow-[0_-1px_15px_rgba(0,0,0,0.02)]">
-        <div className="flex items-center justify-around h-20 max-w-md mx-auto">
+      <nav className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-100 px-6 pb-1 shadow-[0_-1px_15px_rgba(0,0,0,0.02)]">
+        <div className="flex items-center justify-around h-16 max-w-md mx-auto">
           {navItems.map((item) => {
             const isActive = pathname === item.path;
             const Icon = item.icon;
