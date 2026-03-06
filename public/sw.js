@@ -1,9 +1,21 @@
-// 가벼운 서비스 워커 (앱 설치 인식용)
+const CACHE_NAME = 'goldenglove-v2';
+const urlsToCache = [
+  '/',
+  '/dashboard',
+  '/manifest.json',
+  '/icon.png'
+];
+
 self.addEventListener('install', (event) => {
-  self.skipWaiting();
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache))
+  );
 });
 
 self.addEventListener('fetch', (event) => {
-  // 기본 네트워크 요청 처리 (설치 인식 트리거)
-  event.respondWith(fetch(event.request));
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    })
+  );
 });
